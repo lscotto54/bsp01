@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+  	<link rel="stylesheet" href="stylebsp.css" media="screen" type="text/css" />
+  	<link rel="stylesheet" href="styleprint.css" media="print" type="text/css" />
+  	
+  	<title>PDM</title>
+  	
+  	<link rel="icon" href="bsp_icon.png">
+  	
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  	
+  	<script type="text/javascript">
+      $(function() {
+        $('a[href=#header]').click(function(){
+          $('html').animate({scrollTop:0}, 'slow');
+          return false;
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+
+    <h1>PATIENT'S DRUGS MANAGEMENT</h1>
+    <h2>LUXEMBOURG HOSPITAL</h2>
+
+    <form> 
+      <input type="button" value="Print" onClick="window.print()"> <label for="site-search"></label>
+      <a href="http://www.duckduckgo.com" class="bouton1">Go on the web</a>
+    </form>
+  </body>
+
+
+  <head>
+    <script type="text/javascript">
+
+            var i = 0;
+
+      function addKid()
+      {
+        if (i < 100)
+        {
+          var newRow = document.createElement('tr');
+
+          newRow.innerHTML = '<tr> <input type="text" name="Patient s identity_'+i+'" ><td><input type="text" name="Medical staff s identity_'+i+'" ></td><td><input type="Datetime" name="DateandHour_'+i+'" ></td><td><input type="text" name="Reason_'+i+'" ></td><td><input type="text" name="Name of drug_'+i+'" ></td><td><input type="number" name="Dose_'+i+'" ></td><td><input type="button" id="add_kid()" onClick="addKid()" value="+" /><input type="button" value="-" onclick="removeKid(this.parentNode)"></td>';
+
+          document.getElementById('kids').appendChild(newRow);
+          i++;
+        }
+      }
+
+      function removeKid(element)
+      {
+        document.getElementById('kids').removeChild(element.parentNode);
+        i--;
+      }
+
+    </script>
+  </head>
+
+  <body onload="startTime()">
+  
+  <div id="time"> </div>
+
+		
+		  <!--td = cells, tr= row , th= adapted cells'-->
+    
+      <table border="0" id="kids">
+        <tr>
+          <th>Patient's identity</th>
+          <th>Medical staff's identity</th>
+          <th>Date - Hour</th>
+          <th>Reason</th>
+          <th>Name of drug</th>
+          <th>Dose</th>
+          </tr>
+        <tbody  >
+          <tr >
+            <td>
+              <input type="text" name="Patient's identity">
+            </td>
+            <td>
+              <input type="text" name="Medical staff's identity">
+            </td>
+            <td>
+              <input type="datetime" name="Date - Hour">
+            </td>
+            <td>
+              <input type="text" name="Reason">
+            </td>
+            <td>
+              <input type="text" name="Name of drug">
+            </td>
+            <td>
+              <input type="number" name="Dose">
+            </td>
+            <td>
+              <input type="button" id="add_kid()" onClick="addKid()" value="+" />
+            </td>
+          </tr>
+        </tbody> 
+      </table>
+	
+  	<script>
+  		
+  		// function that gets the local time and date
+  		function startTime() {
+  		var today = new Date();
+  		var h = today.getHours();
+  		var m = today.getMinutes();
+  		var s = today.getSeconds();
+  		m = checkTime(m);
+  		s = checkTime(s);
+  		document.getElementById('time').innerHTML = (("0"+today.getDate()).slice(-2)) +"."+ (("0"+(today.getMonth()+1)).slice(-2)) +"."+ (today.getFullYear()) + " - " + h + ":" + m + ":" + s;
+  		var t = setTimeout(startTime, 500);
+  	  }
+  	  function checkTime(i) {
+  		if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  		return i;
+  	  }
+  		
+  	</script>
+  	
+    <br>
+    </br>
+
+    <a href="http://www.123formbuilder.com/form-5107452/contact-form" class="redLink13">Need help? Contact us:</a>
+
+    <div><a href="#header">Back to top</a></div>
+
+    <h5>Lucas SCOTTO DI CESARE © - v.1.0</h5>
+  </body>
+</html>

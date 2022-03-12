@@ -1,0 +1,43 @@
+@page { margin: 10% }
+
+body 
+{
+  background-color :#fff;
+  font-family :Serif;
+  font-size :15pt;
+}
+
+h1
+{
+  margin :0;
+  padding :0;
+  text-indent :0;
+  line-height :25pt;
+  font-size :25pt;
+  text-align: center;
+}
+
+h2
+{
+  margin :0;
+  padding :0;
+  text-indent :0;
+  line-height :15pt;
+  font-size :15pt;
+  text-align: center;
+}
+
+p, form, div, button, address, a
+{
+display :none;
+}
+
+h5
+{
+	margin :0;
+	padding :0;
+	text-indent :0;
+	line-height :10pt;
+	font-size :10pt;
+	text-align: right
+}
